@@ -1,7 +1,7 @@
 import "./App.css";
 import NotFoundPage from "./Pages/NotFoundPage";
 import AboutPage from "./Pages/AboutPage";
-import EquipementList from "./Pages/EquipementList";
+import EquipementListPage from "./Pages/EquipementListPage";
 //import Homepage from "./Components/HOMEPAGE/Home";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Footer />
       <Routes>
-        <Route path="/" element={<EquipementList />} />
+        <Route path="/" element={<EquipementListPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

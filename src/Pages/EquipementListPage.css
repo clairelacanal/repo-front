@@ -1,0 +1,17 @@
+.Equipement-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.EquipementListPage {
+  padding: 20px;
+}
+
+.Equipement-info {
+  flex: 1;
+}
