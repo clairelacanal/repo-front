@@ -4,7 +4,9 @@ function Footer() {
   return (
     <>
       <div className="footer">
-        <a href="https://www.google.com">Sports Repository</a>
+        <a href="https://github.com/clairelacanal/repo-front">
+          Yassine & Claire 2024 - Tous droits réservés
+        </a>
       </div>
     </>
   );

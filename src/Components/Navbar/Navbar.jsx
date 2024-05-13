@@ -3,15 +3,12 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-        </ul>
+      <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid">
+          <span className="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
       </nav>
     </>
   );
