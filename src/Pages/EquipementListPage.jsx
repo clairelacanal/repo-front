@@ -23,7 +23,7 @@ function EquipementListPage() {
       {Equipements.map((Equipement) => (
         <Link
           key={Equipement.id}
-          to={`/Equipement/details/${Equipement.id}`}
+          to={`/Equipement-details/${Equipement.id}`}
           className="Equipement-item"
         >
           <div className="Equipement-card">
