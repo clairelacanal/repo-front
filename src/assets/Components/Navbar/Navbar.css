@@ -1,0 +1,26 @@
+html {
+  --background-bleu: #dff9fb;
+  --backgroun-bleu2: #c7ecee;
+  --background-nectarine: #ffbe76;
+  --background-beekeper: #f6e58d;
+  --background-black: #1e272e;
+  --color-text2: #ffffff;
+  --color-text1: #0c0c0c;
+  --nav-height: 5rem;
+}
+
+p {
+  padding-top: 1rem;
+}
+
+nav {
+  background-color: #ffbe76;
+  height: var(--nav-height);
+  display: flex;
+}
+
+nav img {
+  width: var(--nav-height);
+  height: var(--nav-height);
+  margin-left: 2rem;
+}
