@@ -1,3 +1,5 @@
 nav {
   background-color: var(--background-blue2);
+  width: var(--width-navbar);
+  height: var(--height-navbar);
 }

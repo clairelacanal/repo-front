@@ -10,8 +10,15 @@ html {
   --background-blue1:#B4CDED;
   --background-blue2:#344966;
   --background-black:#0D1821;
+
   --width-footer:100%;
   --height-footer:10rem;
+
+  --width-navbar:100%;
+  --height-navbar:4rem;
+
+  --width-header:100%;
+  --height-header:25rem;
 
 }
 
