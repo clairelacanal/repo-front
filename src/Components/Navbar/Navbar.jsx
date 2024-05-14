@@ -6,7 +6,11 @@ function Navbar() {
       <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
           <span className="navbar-text">
-            Navbar text with an inline element
+            <ul>
+              <li>A propos</li>
+              <li>Etapes</li>
+              <li>Equipements</li>
+            </ul>
           </span>
         </div>
       </nav>

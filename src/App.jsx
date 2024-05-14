@@ -7,16 +7,19 @@ import EquipementDetailsPage from "./Pages/EquipementDetailsPage";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Header from "./Components/Header/Header";
+import About from "./Components/About/About";
 import Footer from "./Components/Footer/Footer";
 import EditEquipementPage from "./Pages/EditEquipementPage";
 import NewEquipement from "./Pages/NewEquipement";
-
+import Caroussel from "./Components/Caroussel/Caroussel";
 
 function App() {
   return (
     <div>
       <Navbar />
       <Header />
+      <About />
+      <Caroussel />
       <Footer />
 
       <nav>

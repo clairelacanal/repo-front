@@ -14,26 +14,26 @@ function SearchBar() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="group">
-        <div className="form-group">
+      <div class="group">
+        <div class="form-group">
           <input
             type="text"
-            className="form-control"
+            class="form-control"
             placeholder="Equipement"
             value={equipment}
             onChange={(e) => setEquipment(e.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div class="form-group">
           <input
             type="text"
-            className="form-control"
+            class="form-control"
             placeholder="Localisation"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" class="btn btn-primary">
           Rechercher
         </button>
       </div>

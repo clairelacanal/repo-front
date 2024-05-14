@@ -20,9 +20,13 @@ html {
   --width-header:100%;
   --height-header:25rem;
 
+  --width-about:100%;
+  --height-about:20rem;
+
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  /*overflow: hidden;*/
+  padding-bottom: var(--height-footer);
+
 }
