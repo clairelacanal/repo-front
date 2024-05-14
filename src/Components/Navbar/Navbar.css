@@ -3,3 +3,11 @@ nav {
   width: var(--width-navbar);
   height: var(--height-navbar);
 }
+
+ul {
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+}

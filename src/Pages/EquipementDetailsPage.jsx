@@ -21,7 +21,10 @@ function EquipementDetailsPage() {
 
   async function handleDelete() {
     try {
-      await axios.delete(`http://localhost:5000/equipments/${EquipementId}`);
+      const response = await axios.delete(
+        `http://localhost:5000/equipments/${EquipementId}`
+      );
+      console.log(response);
       //console.log(`http://localhost:5000/equipments/${EquipementId}`);
       navigate("/");
     } catch (error) {
@@ -30,7 +33,7 @@ function EquipementDetailsPage() {
   }
 
   return (
-    <div className="EquipementDetailsPage">
+    <div class="EquipementDetailsPage">
       <h2>{Equipement.inst_nom}</h2>
       <img src={Equipement.image} alt={Equipement.inst_nom} />
       <p>{Equipement.inst_adresse}</p>
