@@ -6,12 +6,42 @@
   margin-bottom: 10px;
   border-radius: 8px;
   transition: transform 0.2s;
+  margin-left: 0.5rem;
 }
 
 .EquipementListPage {
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--background-blue2);
 }
 
 .Equipement-info {
   flex: 1;
+}
+
+.card-body h5 {
+  color: var(--background-black);
+}
+
+.card-body p {
+  color: var(--background-black);
+}
+
+.card-body a {
+  text-decoration: none;
+}
+
+
+.btn {
+  background-color: var(--background-green);
+  color: var(--background-white);
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid var(--background-green);
+}
+
+.btn:hover {
+  background-color: var(--background-blue2);
+  border: 1px solid var(--background-blue2);
 }

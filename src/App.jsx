@@ -12,8 +12,11 @@ import Footer from "./Components/Footer/Footer";
 import EditEquipementPage from "./Pages/EditEquipementPage";
 import NewEquipement from "./Pages/NewEquipement";
 import Caroussel from "./Components/Caroussel/Caroussel";
-//
+
 import FilteredEquipementsPage from "./Pages/FilteredEquipementsPage";
+
+import Explication from "./Components/Explications/Explications";
+
 
 function App() {
   return (
@@ -22,6 +25,7 @@ function App() {
       <Header />
       <About />
       <Caroussel />
+      <Explication />
       <Footer />
 
       <nav>
