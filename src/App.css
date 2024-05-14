@@ -5,13 +5,21 @@
 }
 
 html {
-  --background-bleu: #dff9fb;
-  --backgroun-bleu2: #c7ecee;
-  --background-nectarine: #ffbe76;
-  --background-beekeper: #f6e58d;
-  --background-black: #1e272e;
-  --color-text2: #ffffff;
-  --color-text1: #0c0c0c;
+  --background-green:#BFCC94;
+  --background-white:#F0F4EF;
+  --background-blue1:#B4CDED;
+  --background-blue2:#344966;
+  --background-black:#0D1821;
+
+  --width-footer:100%;
+  --height-footer:10rem;
+
+  --width-navbar:100%;
+  --height-navbar:4rem;
+
+  --width-header:100%;
+  --height-header:25rem;
+
 }
 
 body {

@@ -1,0 +1,17 @@
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9rem;
+}
+
+.form-group {
+    margin-right: 0.3rem;
+}
+
+.form-group input {
+    background-color: white;
+    margin-right: 3rem;
+    text-align: center;
+}

@@ -1,27 +1,14 @@
-html {
-  --background-bleu: #dff9fb;
-  --backgroun-bleu2: #c7ecee;
-  --background-nectarine: #ffbe76;
-  --background-beekeper: #f6e58d;
-  --background-black: #1e272e;
-  --color-text2: #ffffff;
-  --color-text1: #0c0c0c;
-  --footer-height: 3rem;
-}
-
 .footer {
   background-color: var(--background-black);
-  text-align: center;
-  padding-top: 0.8rem;
-  position: absolute;
-  width: 100%;
-  height: var(--footer-height);
+  width: var(--width-footer);
+  height: var(--height-footer);
+  position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  text-align: center;
+  padding-top: 4rem;
 }
 
 .footer a {
-  text-decoration: none;
-  color: var(--color-text2);
+  color: var(--background-white);
 }
+
