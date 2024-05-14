@@ -3,5 +3,9 @@
     height: var(--height-about);
     background-color: var(--background-blue1);
     text-align: center;
-    padding-top: 9rem;
+    padding: 2rem;
+}
+
+.container-about p {
+    padding: 3rem;
 }

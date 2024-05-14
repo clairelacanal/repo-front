@@ -33,7 +33,7 @@ function EquipementDetailsPage() {
   }
 
   return (
-    <div class="EquipementDetailsPage">
+    <div className="EquipementDetailsPage">
       <h2>{Equipement.inst_nom}</h2>
       <img src={Equipement.image} alt={Equipement.inst_nom} />
       <p>{Equipement.inst_adresse}</p>
