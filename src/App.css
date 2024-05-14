@@ -26,6 +26,9 @@ html {
   --width-explications:100%;
   --height-explications:25rem;
 
+  --width-list:100%;
+  --height-list:40rem;
+
 }
 
 body {
