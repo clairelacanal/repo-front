@@ -8,7 +8,7 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-//import EditEquipementPage from "./Pages/EditEquipementPage";
+import EditEquipementPage from "./Pages/EditEquipementPage";
 import NewEquipement from "./Pages/NewEquipement";
 
 
@@ -31,11 +31,11 @@ function App() {
           path="/Equipement-details/:EquipementId"
           element={<EquipementDetailsPage />}
         />
-        {/*
+
         <Route
           path="/edit-equipement/:EquipementId"
-          Component={EditEquipementPage}
-  />*/}
+          element={<EditEquipementPage />}
+        />
 
         <Route path="/new-Equipement" Component={NewEquipement} />
       </Routes>

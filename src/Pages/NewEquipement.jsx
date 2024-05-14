@@ -18,9 +18,9 @@ function NewEquipement() {
   }
   return (
     <div>
-      <h1>Create a new Project</h1>
+      <h1>Create a new Equipement</h1>
       {errorMsg && <div>{errorMsg}</div>}
-      <Form handleSubmit={handleSubmit} type="Project" />
+      <Form handleSubmit={handleSubmit} type="Equipement" />
     </div>
   );
 }
