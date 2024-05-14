@@ -7,6 +7,7 @@ function Navbar() {
         <div className="container-fluid">
           <span className="navbar-text">
             <ul>
+              <li>Recherche</li>
               <li>A propos</li>
               <li>Etapes</li>
               <li>Equipements</li>

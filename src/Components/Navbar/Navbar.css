@@ -4,10 +4,27 @@ nav {
   height: var(--height-navbar);
 }
 
-ul {
-  display: flex;
+.navbar {
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center; 
 }
 
-ul li {
-  list-style: none;
+.navbar-text {
+  flex-grow: 1; 
+  text-align: center; 
+  color: var(--background-white);
+}
+
+.navbar-text ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: flex; 
+  justify-content: flex-end;
+  align-items: center; 
+}
+
+.navbar-text ul li {
+  margin: 0 15px; 
 }
