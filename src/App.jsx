@@ -12,7 +12,11 @@ import Footer from "./Components/Footer/Footer";
 import EditEquipementPage from "./Pages/EditEquipementPage";
 import NewEquipement from "./Pages/NewEquipement";
 import Caroussel from "./Components/Caroussel/Caroussel";
+
+import FilteredEquipementsPage from "./Pages/FilteredEquipementsPage";
+
 import Explication from "./Components/Explications/Explications";
+
 
 function App() {
   return (
@@ -30,6 +34,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<EquipementListPage />} />
+        <Route
+          path="/filtered-equipements"
+          element={<FilteredEquipementsPage />}
+        />
         <Route path="/about" element={<HomePage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route

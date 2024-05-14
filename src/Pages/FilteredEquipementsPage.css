@@ -1,0 +1,17 @@
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #f9f9f9;
+}
+
+.item p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
