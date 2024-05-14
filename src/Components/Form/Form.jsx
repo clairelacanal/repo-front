@@ -2,8 +2,8 @@ import { useState } from "react";
 
 function Form({ handleSubmit, data, type }) {
   const emptyForm = {
-    title: "",
-    description: "",
+    inst_nom: "",
+    inst_adresse: "",
   };
 
   const [formData, setFormData] = useState(data ?? emptyForm);
@@ -24,24 +24,24 @@ function Form({ handleSubmit, data, type }) {
       }}
     >
       <label>
-        Title
+        inst_nom
         <input
           type="text"
-          name="title"
-          id="title"
-          value={formData.title}
+          name="inst_nom"
+          id="inst_nom"
+          value={formData.inst_nom}
           onChange={handleChange}
         />
       </label>
 
       <label>
-        Description
+        inst_adresse
         <textarea
-          name="description"
-          id="description"
+          name="inst_adresse"
+          id="inst_adresse"
           cols="20"
           rows="2"
-          value={formData.description}
+          value={formData.inst_adresse}
           onChange={handleChange}
         ></textarea>
       </label>
