@@ -23,6 +23,9 @@ html {
   --width-about:100%;
   --height-about:20rem;
 
+  --width-explications:100%;
+  --height-explications:25rem;
+
 }
 
 body {

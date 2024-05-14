@@ -9,8 +9,8 @@ function Navbar() {
             <ul>
               <li>Recherche</li>
               <li>A propos</li>
-              <li>Etapes</li>
-              <li>Equipements</li>
+              <li>Les Etapes</li>
+              <li>Les Equipements</li>
             </ul>
           </span>
         </div>

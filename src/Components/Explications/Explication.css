@@ -1,0 +1,29 @@
+.container-explication {
+    width: var(--width-explications);
+    height: var(--height-explications);
+    background-color: var(--background-white);
+}
+
+.container-explication h1 {
+    text-align: center;
+    padding: 2rem;
+}
+.etapes-rounds {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin-left: 25rem;
+}
+
+.round {
+    background-color: var(--background-blue1);
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100rem;
+}
+
+.round p {
+    margin-top: 4em;
+    margin-left: 2rem;
+}

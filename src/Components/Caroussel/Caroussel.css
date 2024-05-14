@@ -17,7 +17,7 @@
   
   .image-row img {
     height: 300px; 
-    width: auto; 
+    width: 400px; 
     flex-shrink: 0; 
   }
   
