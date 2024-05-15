@@ -17,6 +17,10 @@ function FilteredEquipementsPage() {
   }
   const [filteredEquipements, setFilteredEquipements] = useState([]);
 
+  //const [Equipements, setEquipements] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [equipementsPerPage] = useState(5);
+
   useEffect(() => {
     axios
       .get(
@@ -33,10 +37,21 @@ function FilteredEquipementsPage() {
       });
   }, [equip_nom, inst_cp]);
 
+  const indexOfLastEquipement = currentPage * equipementsPerPage;
+  const indexOfFirstEquipement = indexOfLastEquipement - equipementsPerPage;
+  const currentEquipements = filteredEquipements.slice(
+    indexOfFirstEquipement,
+    indexOfLastEquipement
+  );
+
+  function paginate(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
+
   return (
     <div>
       <h2>Equipements filtrés.. :</h2>
-      {filteredEquipements.map((equipement) => (
+      {currentEquipements.map((equipement) => (
         <div key={equipement.id}>
           <strong>
             <p>{equipement.equip_nom}</p>
@@ -49,6 +64,22 @@ function FilteredEquipementsPage() {
           {/* ... Autres  */}
         </div>
       ))}
+
+      <ul className="pagination">
+        {Array(Math.ceil(filteredEquipements.length / equipementsPerPage))
+          .fill()
+          .map((_, index) => (
+            <li key={index} className="page-item">
+              <a
+                onClick={() => paginate(index + 1)}
+                className="page-link"
+                href="#"
+              >
+                {index + 1}
+              </a>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 }

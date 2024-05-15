@@ -6,6 +6,10 @@ import "./EquipementListPage.css";
 function EquipementListPage() {
   const [Equipements, setEquipements] = useState([]);
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const [equipementsPerPage] = useState(10);
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/equipments")
@@ -18,9 +22,20 @@ function EquipementListPage() {
       });
   }, []);
 
+  const indexOfLastEquipement = currentPage * equipementsPerPage;
+  const indexOfFirstEquipement = indexOfLastEquipement - equipementsPerPage;
+  const currentEquipements = Equipements.slice(
+    indexOfFirstEquipement,
+    indexOfLastEquipement
+  );
+
+  function paginate(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
+
   return (
     <div className="EquipementListPage">
-      {Equipements.map((Equipement) => (
+      {currentEquipements.map((Equipement) => (
         <Link
           key={Equipement.id}
           to={`/Equipement-details/${Equipement.id}`}
@@ -41,6 +56,22 @@ function EquipementListPage() {
           </div>
         </Link>
       ))}
+
+      <ul className="pagination">
+        {Array(Math.ceil(Equipements.length / equipementsPerPage))
+          .fill()
+          .map((_, index) => (
+            <li key={index} className="page-item">
+              <a
+                onClick={() => paginate(index + 1)}
+                className="page-link"
+                href="#"
+              >
+                {index + 1}
+              </a>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 }
