@@ -17,7 +17,6 @@ import FilteredEquipementsPage from "./Pages/FilteredEquipementsPage";
 
 import Explication from "./Components/Explications/Explications";
 
-
 function App() {
   return (
     <div>
