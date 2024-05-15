@@ -8,7 +8,7 @@ function EquipementListPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [equipementsPerPage] = useState(10);
+  const [equipementsPerPage] = useState(8);
 
   useEffect(() => {
     axios
@@ -46,7 +46,11 @@ function EquipementListPage() {
           >
             <div className="card-body">
               <h5 className="card-title">{Equipement.inst_nom}</h5>
-              <p className="card-text">{Equipement.inst_adresse}</p>
+              <p>{Equipement.equip_type_name}</p>
+              <p className="card-text">
+                {Equipement.inst_adresse} - {Equipement.inst_cp}
+              </p>
+              <p></p>
               <a href="#" className="btn btn-primary">
                 En savoir +
               </a>
