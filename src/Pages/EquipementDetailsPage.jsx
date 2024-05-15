@@ -36,8 +36,12 @@ function EquipementDetailsPage() {
     <div className="EquipementDetailsPage">
       <h2>{Equipement.inst_nom}</h2>
       <p>{Equipement.inst_adresse}</p>
+      <p>{Equipement.inst_obs}</p>
       <p>{Equipement.new_name}</p>
+      <p>{Equipement.equip_service_date}</p>
+      <p>{Equipement.equip_url}</p>
       <p>{Equipement.equip_type_name}</p>
+      <p>{Equipement.equip_nature}</p>
       <p>{Equipement.inst_acc_handi_bool}</p>
       <button onClick={handleDelete}>Delete</button>
       <Link to={`/edit-equipement/${EquipementId}`}>Edit</Link>
