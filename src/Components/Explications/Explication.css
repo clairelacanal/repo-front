@@ -1,3 +1,4 @@
+/* Styles généraux pour le conteneur */
 .container-explication {
     width: var(--width-explications);
     height: var(--height-explications);
@@ -8,22 +9,59 @@
     text-align: center;
     padding: 2rem;
 }
+
+/* Styles pour les étapes avec ajustements de positionnement */
 .etapes-rounds {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
-    margin-left: 25rem;
+    margin: auto; 
+    width: 80%; 
 }
 
+/* Styles pour les ronds incluant les animations et ombres */
 .round {
     background-color: var(--background-blue1);
     width: 12rem;
     height: 12rem;
     border-radius: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease-in-out; 
 }
 
+.round:hover {
+    transform: scale(1.05); 
+}
+
+
+.round .icon {
+    color: var(--background-green);
+    font-size: 30px; 
+    margin-bottom: 10px; 
+}
+
+/* Styles pour le texte dans les ronds */
 .round p {
-    margin-top: 4em;
-    margin-left: 2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0 1rem; 
+    font-weight: 500; 
+    line-height: 1.4; 
+}
+
+/* Responsive design pour les dispositifs plus petits */
+@media (max-width: 768px) {
+    .etapes-rounds {
+        flex-direction: 
+        width: auto; 
+    }
+    .round {
+        width: 10rem; 
+        height: 10rem; 
+        margin: 1rem; 
+    }
 }

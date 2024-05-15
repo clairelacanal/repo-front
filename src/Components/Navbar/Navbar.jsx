@@ -18,7 +18,7 @@ function Navbar() {
                 <Link to="./#etapes">Les Etapes</Link>
               </li>
               <li>
-                <a href="#equipements">Les Equipements</a>
+                <Link to="/equipements">Les Equipements</Link>
               </li>
             </ul>
           </span>

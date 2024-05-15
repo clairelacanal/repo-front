@@ -1,5 +1,5 @@
 nav {
-  background-color: var(--background-blue2);
+  background-color: var(--background-violet);
   width: var(--width-navbar);
   height: var(--height-navbar);
 }
@@ -27,4 +27,10 @@ nav {
 
 .navbar-text ul li {
   margin: 0 15px; 
+  text-decoration: none;
+}
+
+.navbar-text ul li a {
+  color: inherit; /* Hérite la couleur de navbar-text */
+  text-decoration: none; /* Enlève le soulignement */
 }

@@ -1,10 +1,16 @@
 .container-about {
     width: var(--width-about);
     height: var(--height-about);
-    background-color: var(--background-blue1);
+    background-color: var(--background-mauveclair);
     text-align: center;
     padding: 2rem;
 }
+
+.highlight {
+    font-size: 20px; 
+    font-weight: bold; 
+    color: var(--background-violet);
+  }
 
 .container-about p {
     padding: 3rem;

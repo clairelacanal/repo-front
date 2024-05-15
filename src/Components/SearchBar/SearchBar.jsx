@@ -18,12 +18,13 @@ function SearchBar() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>Sportive à Paris</h1>
       <div className="group">
         <div className="form-group">
           <input
             type="text"
             className="form-control"
-            placeholder="Equipement (ex. salle de danse)"
+            placeholder="Equipement"
             value={equipment}
             onChange={(e) => setEquipment(e.target.value)}
           />
@@ -32,7 +33,7 @@ function SearchBar() {
           <input
             type="text"
             className="form-control"
-            placeholder="code postal (ex. 75019)"
+            placeholder="Localisation"
             value={inst_cp}
             onChange={(e) => setLocation(e.target.value)}
           />

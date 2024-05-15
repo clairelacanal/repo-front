@@ -6,9 +6,10 @@ function Header() {
   return (
     <>
       <div className="header">
-        <h1>Sportif à Paris</h1>
-        <img src={logo} alt="logo" />
-        <SearchBar />
+        <div className="container-header">
+          <SearchBar />
+          <img src={logo} alt="logo" />
+        </div>
       </div>
     </>
   );
