@@ -18,7 +18,6 @@ function NewEquipement() {
   }
   return (
     <div>
-      <h1>Create a new Equipement</h1>
       {errorMsg && <div>{errorMsg}</div>}
       <Form handleSubmit={handleSubmit} type="Equipement" />
     </div>

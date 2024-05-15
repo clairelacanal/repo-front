@@ -20,7 +20,7 @@ function Explication() {
           </div>
           <div className="round">
             <FontAwesomeIcon className="icon" icon={faClipboard} />{" "}
-            <p>Réalise une fiche de ton équipement</p>
+            <p>Réalise la fiche de ton équipement</p>
           </div>
         </div>
       </div>

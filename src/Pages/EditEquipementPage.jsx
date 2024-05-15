@@ -37,7 +37,6 @@ function EditEquipementPage() {
   }
   return (
     <div>
-      <h1>Edit Equipement</h1>
       {errorMsg && <div>{errorMsg}</div>}
       {Equipement && (
         <Form handleSubmit={handleSubmit} data={Equipement} type="Equipement" />

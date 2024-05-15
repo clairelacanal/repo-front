@@ -1,6 +1,13 @@
+
 @font-face {
-  font-family: "Jacquard";
-  src: url("./assets/fonts/Jacquard12-Regular.ttf")
+  font-family: "intertight";
+  src: url("./assets/fonts/InterTight-VariableFont_wght.ttf")
+  format("truetype");
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
   format("truetype");
 }
 
@@ -21,7 +28,7 @@ html {
   --background-violet:#382449;
 
   --width-footer:100%;
-  --height-footer:10rem;
+  --height-footer:6rem;
 
   --width-navbar:100%;
   --height-navbar:4rem;
@@ -41,7 +48,9 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "inter", sans-serif;
   padding-bottom: var(--height-footer);
+  margin: 0;
+  padding: 0;
 
 }

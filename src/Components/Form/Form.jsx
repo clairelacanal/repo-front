@@ -25,7 +25,7 @@ function Form({ handleSubmit, data, type }) {
       }}
     >
       <div className="form-field">
-        <label htmlFor="inst_nom">Nom Equipement Sportif:</label>
+        <label htmlFor="inst_nom">Nom d'équipement:</label>
         <input
           type="text"
           name="inst_nom"
@@ -35,7 +35,7 @@ function Form({ handleSubmit, data, type }) {
         />
       </div>
       <div className="form-field">
-        <label htmlFor="equip_type_name">Type d'équipement Sportif:</label>
+        <label htmlFor="equip_type_name">Type d'équipement:</label>
         <textarea
           name="equip_type_name"
           id="equip_type_name"
@@ -58,7 +58,7 @@ function Form({ handleSubmit, data, type }) {
         ></textarea>
       </div>
       <div className="form-field">
-        <label htmlFor="inst_obs">Arrondissement</label>
+        <label htmlFor="inst_obs">Arrondissement:</label>
         <textarea
           name="inst_obs"
           id="inst_obs"
@@ -82,9 +82,7 @@ function Form({ handleSubmit, data, type }) {
       </div>*/}
 
       <div className="form-field">
-        <label htmlFor="equip_service_date">
-          date (année) de mise en service
-        </label>
+        <label htmlFor="equip_service_date">Mise en service:</label>
         <select
           name="equip_service_date"
           id="equip_service_date"
@@ -92,7 +90,7 @@ function Form({ handleSubmit, data, type }) {
           onChange={handleChange}
           style={{ width: "25%" }}
         >
-          <option value="">Choisir une année</option>
+          <option value="">Année</option>
           {Array.from(
             { length: new Date().getFullYear() - 1994 },
             (_, index) => (
@@ -104,7 +102,7 @@ function Form({ handleSubmit, data, type }) {
         </select>
       </div>
       <div className="form-field">
-        <label htmlFor="equip_url">url site web:</label>
+        <label htmlFor="equip_url">Site web:</label>
         <textarea
           name="equip_url"
           id="equip_url"
@@ -116,7 +114,7 @@ function Form({ handleSubmit, data, type }) {
       </div>
 
       <div className="form-field">
-        <label htmlFor="equip_nature">Activité (indoor ou outdoor): </label>
+        <label htmlFor="equip_nature">Type d'activité: </label>
         <select
           name="equip_nature"
           id="equip_nature"
@@ -124,9 +122,9 @@ function Form({ handleSubmit, data, type }) {
           onChange={handleChange}
           style={{ width: "25%" }}
         >
-          <option value="">Choisir une option</option>
-          <option value="indoor">Indoor</option>
-          <option value="outdoor">Outdoor</option>
+          <option value="">Activité</option>
+          <option value="interieur">intérieur</option>
+          <option value="exterieur">extérieur</option>
         </select>
       </div>
 
@@ -139,9 +137,8 @@ function Form({ handleSubmit, data, type }) {
           onChange={handleChange}
           style={{ width: "25%" }}
         >
-          <option value="">Choisir une option</option>
           <option value="oui">oui</option>
-          <option value="non">Non</option>
+          <option value="non">non</option>
         </select>
       </div>
 
