@@ -1,52 +1,103 @@
-.Equipement-item, .Equipement-item:hover  {
-  display: flex;
-  align-items: center;
-  border: 1px solid #e0e0e0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  transition: transform 0.2s;
-  margin-left: 0.5rem;
-  text-decoration: none;
-  color: red;
+#equipements {
+  padding: 20px;
+  background: #f4f4f4;
+  min-height: 100vh;
 }
+
+.button-add {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: var(--background-green);
+  color: var(--background-blue2);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button-add:hover {
+  text-decoration: var(--background-green);
+}
+
+
 
 .EquipementListPage {
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--background-blue2);
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.Equipement-item {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Equipement-item:hover {
+  background-color: white;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.card-title {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
   justify-content: center;
-  gap: 0.5rem;
-  height: fit-content;
+  padding-top: 20px;
 }
 
-.Equipement-info {
-  flex: 1;
+.page-item {
+  margin: 0 5px;
 }
 
-.card-body h5 {
-  color: var(--background-black);
-}
-
-.card-body p {
-  color: var(--background-black);
-}
-
-.card-body a{
+.page-link {
+  display: inline-block;
+  padding: 5px 10px;
+  color: black;
   text-decoration: none;
+  transition: background-color 0.3s;
 }
 
+.page-link:hover {
+  background-color: #e9ecef;
+  border-radius: 3px;
+}
 
-.btn {
-  background-color: var(--background-green);
-  color: var(--background-white);
+.btn-primary {
+  background-color: var(--background-violet);
+  border: 1px solid var(--background-violet);
   text-transform: uppercase;
-  font-weight: 700;
-  border: 1px solid var(--background-green);
 }
 
-.btn:hover {
-  background-color: var(--background-blue2);
-  border: 1px solid var(--background-blue2);
+.btn-primary:hover {
+  background-color: var(--background-green);
+  border: 1px solid var(--background-green);
+  text-transform: uppercase;
 }
+
+
+
+

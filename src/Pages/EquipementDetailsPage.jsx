@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 function EquipementDetailsPage() {
-  const [Equipement, setEquipement] = useState([]);
+  const [Equipement, setEquipement] = useState(null);
   const { EquipementId } = useParams();
   const navigate = useNavigate();
 
@@ -21,30 +21,52 @@ function EquipementDetailsPage() {
 
   async function handleDelete() {
     try {
-      const response = await axios.delete(
-        `http://localhost:5000/equipments/${EquipementId}`
-      );
-      console.log(response);
-      //console.log(`http://localhost:5000/equipments/${EquipementId}`);
+      await axios.delete(`http://localhost:5000/equipments/${EquipementId}`);
       navigate("/");
     } catch (error) {
       console.log(error.message);
     }
   }
 
+  if (!Equipement) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="EquipementDetailsPage">
       <h2>{Equipement.inst_nom}</h2>
-      <p>{Equipement.inst_adresse}</p>
-      <p>{Equipement.inst_obs}</p>
-      <p>{Equipement.new_name}</p>
-      <p>{Equipement.equip_service_date}</p>
-      <p>{Equipement.equip_url}</p>
-      <p>{Equipement.equip_type_name}</p>
-      <p>{Equipement.equip_nature}</p>
-      <p>{Equipement.inst_acc_handi_bool}</p>
-      <button onClick={handleDelete}>Delete</button>
-      <Link to={`/edit-equipement/${EquipementId}`}>Edit</Link>
+      <p>
+        <strong>Addresse:</strong> {Equipement.inst_adresse}
+      </p>
+      <p>
+        <strong>Observations:</strong> {Equipement.inst_obs}
+      </p>
+      <p>
+        <strong>Arrondissement:</strong> {Equipement.new_name}
+      </p>
+      <p>
+        <strong>Création:</strong> {Equipement.equip_service_date}
+      </p>
+      <p>
+        <strong>Site internet:</strong> {Equipement.equip_url}
+      </p>
+      <p>
+        <strong>Structure:</strong> {Equipement.equip_type_name}
+      </p>
+      <p>
+        <strong>Nature: </strong>
+        {Equipement.equip_nature}
+      </p>
+      <p>
+        <strong>Accessibilité:</strong>{" "}
+        {Equipement.inst_acc_handi_bool ? "Oui" : "Non"}
+      </p>
+      <button onClick={handleDelete} className="button-details delete">
+        Delete
+      </button>
+      <Link to={`/edit-equipement/${EquipementId}`} className="button-details">
+        Edit
+      </Link>
     </div>
   );
 }
