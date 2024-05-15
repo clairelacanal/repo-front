@@ -23,7 +23,7 @@ function SearchBar() {
           <input
             type="text"
             className="form-control"
-            placeholder="Equipemt (ex. salle de danse)"
+            placeholder="Equipement (ex. salle de danse)"
             value={equipment}
             onChange={(e) => setEquipment(e.target.value)}
           />

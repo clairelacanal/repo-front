@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Jacquard";
+  src: url("./assets/fonts/Jacquard12-Regular.ttf")
+  format("truetype");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

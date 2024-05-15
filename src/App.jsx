@@ -17,7 +17,6 @@ import FilteredEquipementsPage from "./Pages/FilteredEquipementsPage";
 
 import Explication from "./Components/Explications/Explications";
 
-
 function App() {
   return (
     <div>
@@ -26,7 +25,6 @@ function App() {
       <About />
       <Caroussel />
       <Explication />
-      <Footer />
 
       <nav>
         <NavLink to="/new-Equipement">New Equipement</NavLink>
@@ -52,6 +50,7 @@ function App() {
 
         <Route path="/new-Equipement" Component={NewEquipement} />
       </Routes>
+      <Footer />
     </div>
   );
 }

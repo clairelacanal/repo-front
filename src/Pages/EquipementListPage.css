@@ -1,4 +1,4 @@
-.Equipement-item {
+.Equipement-item, .Equipement-item:hover  {
   display: flex;
   align-items: center;
   border: 1px solid #e0e0e0;
@@ -7,6 +7,8 @@
   border-radius: 8px;
   transition: transform 0.2s;
   margin-left: 0.5rem;
+  text-decoration: none;
+  color: red;
 }
 
 .EquipementListPage {
@@ -14,6 +16,9 @@
   display: flex;
   flex-wrap: wrap;
   background-color: var(--background-blue2);
+  justify-content: center;
+  gap: 0.5rem;
+  height: fit-content;
 }
 
 .Equipement-info {
@@ -28,7 +33,7 @@
   color: var(--background-black);
 }
 
-.card-body a {
+.card-body a{
   text-decoration: none;
 }
 
