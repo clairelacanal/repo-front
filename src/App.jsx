@@ -21,23 +21,14 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Header />
-      <About />
-      <Caroussel />
-      <Explication />
-      <Footer />
-
-      <nav>
-        <NavLink to="/new-Equipement">New Equipement</NavLink>
-      </nav>
 
       <Routes>
-        <Route path="/" element={<EquipementListPage />} />
+        <Route path="/equipements" element={<EquipementListPage />} />
         <Route
           path="/filtered-equipements"
           element={<FilteredEquipementsPage />}
         />
-        <Route path="/about" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route
           path="/Equipement-details/:EquipementId"
@@ -51,6 +42,7 @@ function App() {
 
         <Route path="/new-Equipement" Component={NewEquipement} />
       </Routes>
+      <Footer />
     </div>
   );
 }

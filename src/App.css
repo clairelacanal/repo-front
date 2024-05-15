@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Jacquard";
+  src: url("./assets/fonts/Jacquard12-Regular.ttf")
+  format("truetype");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,11 +11,14 @@
 }
 
 html {
-  --background-green:#BFCC94;
+  --background-green:#F88F6F;
   --background-white:#F0F4EF;
-  --background-blue1:#B4CDED;
-  --background-blue2:#344966;
+  --background-blue1:#4977B3;
+  --background-blue2:#3A4682;
   --background-black:#0D1821;
+  --background-mauvefonce:#C28EB2;
+  --background-mauveclair:#D7B3CD;
+  --background-violet:#382449;
 
   --width-footer:100%;
   --height-footer:10rem;
@@ -18,10 +27,10 @@ html {
   --height-navbar:4rem;
 
   --width-header:100%;
-  --height-header:25rem;
+  --height-header:45rem;
 
   --width-about:100%;
-  --height-about:20rem;
+  --height-about:22rem;
 
   --width-explications:100%;
   --height-explications:25rem;

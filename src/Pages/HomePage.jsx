@@ -1,8 +1,17 @@
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+import About from "../Components/About/About";
+import Caroussel from "../Components/Caroussel/Caroussel";
+import Explication from "../Components/Explications/Explications";
+import Header from "../Components/Header/Header";
 
-function AboutPage() {
-  return <></>;
+function HomePage() {
+  return (
+    <>
+      <Header />
+      <About />
+      <Caroussel />
+      <Explication />
+    </>
+  );
 }
 
-export default AboutPage;
+export default HomePage;

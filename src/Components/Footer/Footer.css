@@ -2,8 +2,6 @@
   background-color: var(--background-black);
   width: var(--width-footer);
   height: var(--height-footer);
-  position: fixed;
-  bottom: 0;
   text-align: center;
   padding-top: 4rem;
 }
