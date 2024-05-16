@@ -3,7 +3,7 @@
   width: var(--width-footer);
   height: var(--height-footer);
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 .footer a {

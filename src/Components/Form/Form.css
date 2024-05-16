@@ -1,10 +1,58 @@
-.form-field {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 15px;
+.pico {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-label {
-  margin-right: 10px;
+.form-field {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-field input[type="text"],
+.form-field textarea,
+.form-field select {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  resize: none; 
+}
+
+.form-field textarea {
+  height: auto; 
+}
+
+input[type="submit"] {
+  background-color: var(--background-mauvefonce);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--background-mauvefonce);
+}
+
+/* Styles supplémentaires pour les erreurs ou validations */
+.input-error {
+  border-color: #ff0000;
+}
+
+.input-valid {
+  border-color: #00ff00;
 }

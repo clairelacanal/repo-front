@@ -63,10 +63,13 @@ function EquipementDetailsPage() {
         {Equipement.inst_acc_handi_bool ? "Oui" : "Non"}
       </p>
       <button onClick={handleDelete} className="button-details delete">
-        Delete
+        Supprimer
       </button>
-      <Link to={`/edit-equipement/${EquipementId}`} className="button-details">
-        Edit
+      <Link
+        to={`/edit-equipement/${EquipementId}`}
+        className="button-details edit"
+      >
+        Editer
       </Link>
     </div>
   );

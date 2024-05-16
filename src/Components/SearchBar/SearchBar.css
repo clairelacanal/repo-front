@@ -5,6 +5,13 @@
     margin-left: 4rem;
 }
 
+form h1 {
+    font-family: "intertight", sans-serif;
+    margin-right: 21rem;
+    font-weight: 500; 
+    font-style: italic; 
+}
+
 
 .form-group {
     margin-right: 0.3rem;

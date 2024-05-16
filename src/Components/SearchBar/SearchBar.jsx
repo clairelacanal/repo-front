@@ -18,7 +18,7 @@ function SearchBar() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Sportive à Paris</h1>
+      <h1>Sportif à Paris</h1>
       <div className="group">
         <div className="form-group">
           <input

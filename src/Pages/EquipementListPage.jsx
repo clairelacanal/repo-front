@@ -49,7 +49,7 @@ function EquipementListPage() {
   return (
     <div id="equipements">
       <Link to="/new-Equipement" className="button-add">
-        New Equipement
+        + Nouvel équipement
       </Link>
       <div className="EquipementListPage">
         {Equipements.map((Equipement) => (

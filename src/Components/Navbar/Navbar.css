@@ -28,9 +28,16 @@ nav {
 .navbar-text ul li {
   margin: 0 15px; 
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.navbar-text ul li:hover {
+  color: var(--background-green);
+  background-color: transparent;
 }
 
 .navbar-text ul li a {
-  color: inherit; /* Hérite la couleur de navbar-text */
-  text-decoration: none; /* Enlève le soulignement */
+  color: inherit; 
+  text-decoration: none; 
 }
