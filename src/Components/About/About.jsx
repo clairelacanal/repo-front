@@ -4,7 +4,7 @@ function About() {
   return (
     <div id="a-propos">
       <div className="container-about">
-        <h1>A Propos</h1>
+        <h2>A Propos</h2>
         <p>
           <strong className="highlight">SPORTIF À PARIS</strong> est le guide
           parfaitement conçu pour les passionnés de sport dans la capitale

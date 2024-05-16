@@ -8,7 +8,7 @@ function Explication() {
   return (
     <div id="etapes">
       <div className="container-explication">
-        <h1>Les étapes</h1>
+        <h2>Les étapes</h2>
         <div className="etapes-rounds">
           <div className="round">
             <FontAwesomeIcon className="icon" icon={faMagnifyingGlass} />
