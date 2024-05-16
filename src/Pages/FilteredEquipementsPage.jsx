@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./FilteredEquipementsPage.css";
 import { API_BASE_URL } from "../consts";
@@ -50,19 +50,23 @@ function FilteredEquipementsPage() {
   }
 */
   return (
-    <div>
-      <h2>Equipements filtrés.. :</h2>
-      {filteredEquipements.map((equipement) => (
-        <div key={equipement.id}>
-          <strong>
-            <p>{equipement.equip_nom}</p>
-          </strong>
-
-          <p>{equipement.inst_adresse}</p>
-          <p>{equipement.inst_cp}</p>
-          <p>{equipement.new_name}</p>
-          <hr />
-          {/* ... Autres  */}
+    <div className="container-filtering">
+      {currentEquipements.map((equipement) => (
+        <div key={equipement.id} className="card-item">
+          <div className="card-body">
+            <h5 className="card-title">{equipement.inst_nom}</h5>
+            <p>{equipement.equip_type_name}</p>
+            <p className="card-text">
+              {equipement.inst_adresse} - {equipement.inst_cp}
+            </p>
+            <Link
+              className="btn btn-primary"
+              key={equipement.id}
+              to={`/Equipement-details/${equipement.id}`}
+            >
+              En savoir +
+            </Link>
+          </div>
         </div>
       ))}
 

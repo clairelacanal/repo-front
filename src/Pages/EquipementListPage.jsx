@@ -50,9 +50,8 @@ function EquipementListPage() {
       </Link>
       <div className="EquipementListPage">
         {Equipements.map((Equipement) => (
-          <Link
+          <div
             key={Equipement.id}
-            to={`/Equipement-details/${Equipement.id}`}
             className="Equipement-item card"
             style={{ width: "18rem" }}
           >
@@ -62,15 +61,31 @@ function EquipementListPage() {
               <p className="card-text">
                 {Equipement.inst_adresse} - {Equipement.inst_cp}
               </p>
-              <p></p>
-              <a href="#" className="btn btn-primary">
+              <Link
+                className="btn btn-primary"
+                to={`/Equipement-details/${Equipement.id}`}
+              >
                 En savoir +
-              </a>
+              </Link>
             </div>
-          </Link>
+          </div>
         ))}
         <ul className="pagination">
-          {}
+          {/*{Array(Math.ceil(Equipements.length / equipementsPerPage))
+            .fill()
+            .map((_, index) => (
+              <li key={index} className="page-item">
+                <button
+                  onClick={() => paginate(index + 1)}
+                  className="page-link"
+                  href="#"
+                >
+                  {index + 1}
+                </button>
+              </li>
+            ))}*/}
+
+          <button onClick={() => setCurrentPage((currentPage) => 1)}>1</button>
 
           <button
             className="custom-button"
@@ -90,11 +105,11 @@ function EquipementListPage() {
           <span className="page-number">{currentPage}</span>
 
           <button
-            className="custom-button"
+            className="page-link-pagination"
             onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
             disabled={currentPage === nbrOfPages ? true : false}
           >
-            next Page
+            page suivante
           </button>
 
           <button
