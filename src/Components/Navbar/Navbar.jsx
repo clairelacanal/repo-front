@@ -9,13 +9,19 @@ function Navbar() {
           <span className="navbar-text">
             <ul>
               <li>
-                <Link to="#recherche">Recherche</Link>
+                <Link to="/">
+                  <a href="#recherche">Recherche</a>
+                </Link>
               </li>
               <li>
-                <Link to="#a-propos">A propos</Link>
+                <Link to="/">
+                  <a href="#a-propos">A propos</a>
+                </Link>
               </li>
               <li>
-                <Link to="./#etapes">Les Etapes</Link>
+                <Link to="/">
+                  <a href="#etapes">Les étapes</a>
+                </Link>
               </li>
               <li>
                 <Link to="/equipements">Les Equipements</Link>

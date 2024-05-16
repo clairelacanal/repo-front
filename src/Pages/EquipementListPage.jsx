@@ -70,8 +70,11 @@ function EquipementListPage() {
               </li>
             ))}*/}
 
-          <button onClick={() => setCurrentPage((page) => page + 1)}>
-            next page
+          <button
+            onClick={() => setCurrentPage((page) => page + 1)}
+            className="page-link-pagination"
+          >
+            page suivante
           </button>
         </ul>
       </div>

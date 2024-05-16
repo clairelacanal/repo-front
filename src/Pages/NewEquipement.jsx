@@ -11,7 +11,7 @@ function NewEquipement() {
     console.log(formData);
     try {
       await axios.post(`http://localhost:5000/equipments`, formData);
-      navigate("/");
+      navigate("/equipements");
     } catch (error) {
       setErrorMsg(error.message);
     }

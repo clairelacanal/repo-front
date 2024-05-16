@@ -48,7 +48,6 @@ input[type="submit"]:hover {
   background-color: var(--background-mauvefonce);
 }
 
-/* Styles supplémentaires pour les erreurs ou validations */
 .input-error {
   border-color: #ff0000;
 }

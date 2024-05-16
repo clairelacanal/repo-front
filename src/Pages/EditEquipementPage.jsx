@@ -30,7 +30,7 @@ function EditEquipementPage() {
         `http://localhost:5000/equipments/${EquipementId}`,
         formData
       );
-      navigate(`/`);
+      navigate(`/equipements`);
     } catch (error) {
       setErrorMsg(error.message);
     }
