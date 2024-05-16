@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./FilteredEquipementsPage.css";
+import { API_BASE_URL } from "../consts";
 
 function FilteredEquipementsPage() {
   const [search] = useSearchParams();
@@ -24,7 +25,7 @@ function FilteredEquipementsPage() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/equipments?${searchQuerry}`
+        `${API_BASE_URL}/equipments?${searchQuerry}`
 
         //http://localhost:5000/equipments?inst_cp=75019
       )
