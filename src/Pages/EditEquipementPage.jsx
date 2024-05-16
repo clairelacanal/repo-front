@@ -27,8 +27,11 @@ function EditEquipementPage() {
 
   async function handleSubmit(formData) {
     try {
+ 
+
       await axios.put(`${API_BASE_URL}/equipments/${EquipementId}`, formData);
-      navigate(`/`);
+      navigate(`/equipements`);
+
     } catch (error) {
       setErrorMsg(error.message);
     }

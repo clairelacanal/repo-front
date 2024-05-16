@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Form.css";
 
-function Form({ handleSubmit, data, type }) {
+function Form({ handleSubmit, data }) {
   const emptyForm = {
     inst_nom: "",
     inst_adresse: "",
@@ -142,7 +142,7 @@ function Form({ handleSubmit, data, type }) {
         </select>
       </div>
 
-      <input type="submit" value={`${data ? "Update" : "Add"} ${type}`} />
+      <input type="submit" value={`${data ? "Editer" : "Ajouter"}`} />
     </form>
   );
 }

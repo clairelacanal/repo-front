@@ -37,6 +37,7 @@
 
   .delete {
     background-color: red;
+    border: 1px solid red;
   }
 
   .edit:hover {

@@ -20,7 +20,7 @@ function About() {
           débutant plein d’enthousiasme,{" "}
           <strong className="highlight">SPORTIF À PARIS</strong> est votre allié
           incontournable pour rester actif et connecté au monde du sport
-          parisien.
+          Parisien.
         </p>
       </div>
     </div>

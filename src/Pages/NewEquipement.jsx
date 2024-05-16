@@ -11,8 +11,10 @@ function NewEquipement() {
   async function handleSubmit(formData) {
     console.log(formData);
     try {
+
       await axios.post(`${API_BASE_URL}/equipments`, formData);
-      navigate("/");
+      navigate("/equipements");
+
     } catch (error) {
       setErrorMsg(error.message);
     }
