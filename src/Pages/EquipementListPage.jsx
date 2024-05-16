@@ -6,11 +6,8 @@ import { API_BASE_URL } from "../consts";
 
 function EquipementListPage() {
   const [Equipements, setEquipements] = useState([]);
-
   const [currentPage, setCurrentPage] = useState(1);
-
   const [nbrOfPages, setnbrOfPages] = useState(1);
-
   const equipementsPerPage = 12;
 
   useEffect(() => {
@@ -73,37 +70,37 @@ function EquipementListPage() {
           </Link>
         ))}
         <ul className="pagination">
-          {/*{Array(Math.ceil(Equipements.length / equipementsPerPage))
-            .fill()
-            .map((_, index) => (
-              <li key={index} className="page-item">
-                <button
-                  onClick={() => paginate(index + 1)}
-                  className="page-link"
-                  href="#"
-                >
-                  {index + 1}
-                </button>
-              </li>
-            ))}*/}
-
-          <button onClick={() => setCurrentPage((currentPage) => 1)}>1</button>
+          {}
 
           <button
+            className="custom-button"
+            onClick={() => setCurrentPage((currentPage) => 1)}
+          >
+            1
+          </button>
+
+          <button
+            className="custom-button"
             onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
+            disabled={currentPage === 1 ? true : false}
           >
             previous Page
           </button>
 
-          <span>{currentPage}</span>
+          <span className="page-number">{currentPage}</span>
 
           <button
+            className="custom-button"
             onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
+            disabled={currentPage === nbrOfPages ? true : false}
           >
             next Page
           </button>
 
-          <button onClick={() => setCurrentPage((currentPage) => nbrOfPages)}>
+          <button
+            className="custom-button"
+            onClick={() => setCurrentPage((currentPage) => nbrOfPages)}
+          >
             {nbrOfPages}
           </button>
         </ul>

@@ -23,7 +23,7 @@ function EquipementDetailsPage() {
   async function handleDelete() {
     try {
       await axios.delete(`${API_BASE_URL}/equipments/${EquipementId}`);
-      navigate("/");
+      navigate("/equipements");
     } catch (error) {
       console.log(error.message);
     }

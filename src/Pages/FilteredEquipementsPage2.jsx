@@ -4,7 +4,7 @@ import axios from "axios";
 import "./FilteredEquipementsPage.css";
 import { API_BASE_URL } from "../consts";
 
-function FilteredEquipementsPage() {
+function FilteredEquipementsPage2() {
   const [search] = useSearchParams();
   let searchQuerry = "";
   const equip_nom = search.get("equip_nom") || "";
@@ -22,21 +22,48 @@ function FilteredEquipementsPage() {
   // const [currentPage, setCurrentPage] = useState(1);
   //const [equipementsPerPage] = useState(5);
 
-  useEffect(() => {
-    axios
-      .get(
-        `${API_BASE_URL}/equipments?${searchQuerry}`
+  const [currentPage, setCurrentPage] = useState(1);
+  const [nbrOfPages, setnbrOfPages] = useState(1);
+  const equipementsPerPage = 5;
 
-        //http://localhost:5000/equipments?inst_cp=75019
-      )
-      .then((response) => {
-        setFilteredEquipements(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [equip_nom, inst_cp]);
+  useEffect(
+    () => {
+      axios
+        .get(
+          `${API_BASE_URL}/equipments?${searchQuerry}_page=${currentPage}&_limit=${equipementsPerPage}`
+
+          //http://localhost:5000/equipments?inst_cp=75019
+        )
+        .then((response) => {
+          setFilteredEquipements(response.data);
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    [equip_nom, inst_cp],
+    currentPage
+  );
+
+  useEffect(() => {
+    async function fetchPageCount() {
+      try {
+        const response = await axios.head(
+          `${API_BASE_URL}/equipments?${searchQuerry}_page=1`
+        );
+
+        const totalCount = parseInt(response.headers["x-total-count"]);
+        const pageCount = Math.ceil(totalCount / equipementsPerPage);
+        console.log(totalCount);
+        setnbrOfPages(pageCount);
+      } catch (error) {
+        console.error("error :", error);
+      }
+    }
+
+    fetchPageCount();
+  }, []);
 
   /*const indexOfLastEquipement = currentPage * equipementsPerPage;
   const indexOfFirstEquipement = indexOfLastEquipement - equipementsPerPage;
@@ -82,8 +109,33 @@ function FilteredEquipementsPage() {
             </li>
           ))}
         </ul>*/}
+      <ul className="pagination">
+        {}
+
+        <button onClick={() => setCurrentPage((currentPage) => 1)}>1</button>
+
+        <button
+          onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
+          disabled={currentPage === 1 ? true : false}
+        >
+          previous Page
+        </button>
+
+        <span>{currentPage}</span>
+
+        <button
+          onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
+          disabled={currentPage === nbrOfPages ? true : false}
+        >
+          next Page
+        </button>
+
+        <button onClick={() => setCurrentPage((currentPage) => nbrOfPages)}>
+          {nbrOfPages}
+        </button>
+      </ul>
     </div>
   );
 }
 
-export default FilteredEquipementsPage;
+export default FilteredEquipementsPage2;

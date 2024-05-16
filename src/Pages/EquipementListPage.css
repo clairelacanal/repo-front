@@ -23,8 +23,6 @@
   color: var(--background-violet);
 }
 
-
-
 .EquipementListPage {
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +32,7 @@
 
 .Equipement-item {
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin: 10px;
   border-radius: 8px;
   overflow: hidden;
@@ -50,7 +48,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 
 .card-title {
   color: #333;
@@ -101,6 +98,21 @@
   text-transform: uppercase;
 }
 
-
-
-
+.custom-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.page-number {
+  font-weight: bold;
+  color: #4caf50;
+  font-size: 18px;
+}
