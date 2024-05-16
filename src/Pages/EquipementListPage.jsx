@@ -88,26 +88,27 @@ function EquipementListPage() {
               </li>
             ))}*/}
 
-
           <button onClick={() => setCurrentPage((currentPage) => 1)}>1</button>
 
           <button
             onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
+            disabled={currentPage === 1 ? true : false}
           >
             previous Page
           </button>
 
           <span>{currentPage}</span>
 
-          <button className="page-link-pagination
+          <button
+            className="page-link-pagination"
             onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
+            disabled={currentPage === nbrOfPages ? true : false}
           >
             page suivante
           </button>
 
           <button onClick={() => setCurrentPage((currentPage) => nbrOfPages)}>
             {nbrOfPages}
-
           </button>
         </ul>
       </div>
