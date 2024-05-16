@@ -13,8 +13,6 @@ import EditEquipementPage from "./Pages/EditEquipementPage";
 import NewEquipement from "./Pages/NewEquipement";
 import Caroussel from "./Components/Caroussel/Caroussel";
 
-import FilteredEquipementsPage from "./Pages/FilteredEquipementsPage";
-
 import Explication from "./Components/Explications/Explications";
 
 function App() {
@@ -24,10 +22,7 @@ function App() {
 
       <Routes>
         <Route path="/equipements" element={<EquipementListPage />} />
-        <Route
-          path="/filtered-equipements"
-          element={<FilteredEquipementsPage />}
-        />
+
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route

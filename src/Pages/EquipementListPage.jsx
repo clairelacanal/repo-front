@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "./EquipementListPage.css";
 import { API_BASE_URL } from "../consts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,11 +19,23 @@ function EquipementListPage() {
 
   const equipementsPerPage = 12;
 
+  const [search] = useSearchParams();
+  let searchQuerry = "";
+  const equip_nom = search.get("equip_nom") || "";
+  const inst_cp = search.get("inst_cp") || "";
+
+  if (equip_nom) {
+    searchQuerry += `equip_nom=${equip_nom.toUpperCase()}&`;
+  }
+  if (inst_cp) {
+    searchQuerry += `inst_cp=${inst_cp}`;
+  }
+
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get(
-          `${API_BASE_URL}/equipments?_page=${currentPage}&_limit=${equipementsPerPage}`
+          `${API_BASE_URL}/equipments?_page=${currentPage}&_limit=${equipementsPerPage}&${searchQuerry}`
         );
         setEquipements(response.data);
         console.log(response.data);
@@ -33,12 +45,14 @@ function EquipementListPage() {
     }
 
     fetchData();
-  }, [currentPage]);
+  }, [currentPage, search]);
 
   useEffect(() => {
     async function fetchPageCount() {
       try {
-        const response = await axios.head(`${API_BASE_URL}/equipments?_page=1`);
+        const response = await axios.head(
+          `${API_BASE_URL}/equipments?_page=1&${searchQuerry}`
+        );
 
         const totalCount = parseInt(response.headers["x-total-count"]);
         const pageCount = Math.ceil(totalCount / equipementsPerPage);
@@ -50,7 +64,7 @@ function EquipementListPage() {
     }
 
     fetchPageCount();
-  }, []);
+  }, [search]);
 
   return (
     <div id="equipements">

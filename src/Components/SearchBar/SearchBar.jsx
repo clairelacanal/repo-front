@@ -13,7 +13,7 @@ function SearchBar() {
     event.preventDefault();
     console.log("Recherche pour:", equipment, inst_cp);
     //
-    navigate(`/filtered-equipements?equip_nom=${equipment}&inst_cp=${inst_cp}`);
+    navigate(`/equipements?equip_nom=${equipment}&inst_cp=${inst_cp}`);
   };
 
   return (
