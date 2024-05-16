@@ -2,6 +2,7 @@ import "./EquipementDetailsPage.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../consts";
 
 function EquipementDetailsPage() {
   const [Equipement, setEquipement] = useState(null);
@@ -10,7 +11,7 @@ function EquipementDetailsPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/equipments/${EquipementId}`)
+      .get(`${API_BASE_URL}/equipments/${EquipementId}`)
       .then((response) => {
         setEquipement(response.data);
       })
@@ -21,7 +22,7 @@ function EquipementDetailsPage() {
 
   async function handleDelete() {
     try {
-      await axios.delete(`http://localhost:5000/equipments/${EquipementId}`);
+      await axios.delete(`${API_BASE_URL}/equipments/${EquipementId}`);
       navigate("/");
     } catch (error) {
       console.log(error.message);
