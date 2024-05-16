@@ -23,7 +23,8 @@ function EquipementDetailsPage() {
   async function handleDelete() {
     try {
       await axios.delete(`${API_BASE_URL}/equipments/${EquipementId}`);
-      navigate("/equipements");
+      navigate(-1);
+      //window.history.back();
     } catch (error) {
       console.log(error.message);
     }
@@ -32,7 +33,7 @@ function EquipementDetailsPage() {
   if (!Equipement) {
     return <div>Loading...</div>;
   }
-
+  console.log(window.history);
   return (
     <div className="EquipementDetailsPage">
       <h2>{Equipement.inst_nom}</h2>
