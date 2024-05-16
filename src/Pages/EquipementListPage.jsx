@@ -3,8 +3,14 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./EquipementListPage.css";
 import { API_BASE_URL } from "../consts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWheelchair } from "@fortawesome/free-solid-svg-icons";
 
 function EquipementListPage() {
+  function RenderIcon({ isHandicapped }) {
+    return isHandicapped ? <FontAwesomeIcon icon={faWheelchair} /> : null;
+  }
+
   const [Equipements, setEquipements] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,7 +65,14 @@ function EquipementListPage() {
             style={{ width: "18rem" }}
           >
             <div className="card-body">
-              <h5 className="card-title">{Equipement.inst_nom}</h5>
+              <h5 className="card-title">
+                {Equipement.inst_nom}{" "}
+                <span className="handicap-icon">
+                  <RenderIcon
+                    isHandicapped={Equipement.inst_acc_handi_bool === "true"}
+                  />
+                </span>
+              </h5>
               <p>{Equipement.equip_type_name}</p>
               <p className="card-text">
                 {Equipement.inst_adresse} - {Equipement.inst_cp}
@@ -74,41 +87,52 @@ function EquipementListPage() {
           </div>
         ))}
         <ul className="pagination">
-          {/*{Array(Math.ceil(Equipements.length / equipementsPerPage))
-            .fill()
-            .map((_, index) => (
-              <li key={index} className="page-item">
-                <button
-                  onClick={() => paginate(index + 1)}
-                  className="page-link"
-                  href="#"
-                >
-                  {index + 1}
-                </button>
-              </li>
-            ))}*/}
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => setCurrentPage(1)}
+              disabled={currentPage === 1}
+              aria-label="Aller à la première page"
+            >
+              1
+            </button>
+          </li>
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              aria-label="Page précédente"
+            >
+              &laquo;
+            </button>
+          </li>
 
+          <li className="page-item active">
+            <span className="page-link-pagination">{currentPage}</span>
+          </li>
 
-          <button onClick={() => setCurrentPage((currentPage) => 1)}>1</button>
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={currentPage === nbrOfPages}
+              aria-label="Page suivante"
+            >
+              &raquo;
+            </button>
+          </li>
 
-          <button
-            onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
-          >
-            previous Page
-          </button>
-
-          <span>{currentPage}</span>
-
-          <button className="page-link-pagination
-            onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
-          >
-            page suivante
-          </button>
-
-          <button onClick={() => setCurrentPage((currentPage) => nbrOfPages)}>
-            {nbrOfPages}
-
-          </button>
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => setCurrentPage(nbrOfPages)}
+              disabled={currentPage === nbrOfPages}
+              aria-label="Aller à la dernière page"
+            >
+              {nbrOfPages}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

@@ -22,10 +22,8 @@ function EquipementDetailsPage() {
 
   async function handleDelete() {
     try {
-
       await axios.delete(`${API_BASE_URL}/equipments/${EquipementId}`);
       navigate("/equipements");
-
     } catch (error) {
       console.log(error.message);
     }
@@ -39,40 +37,42 @@ function EquipementDetailsPage() {
     <div className="EquipementDetailsPage">
       <h2>{Equipement.inst_nom}</h2>
       <p>
-        <strong>Addresse:</strong> {Equipement.inst_adresse}
+        <strong>ADRESSE:</strong> {Equipement.inst_adresse}
       </p>
       <p>
-        <strong>Observations:</strong> {Equipement.inst_obs}
+        <strong>OBSERVATIONS:</strong> {Equipement.inst_obs}
       </p>
       <p>
-        <strong>Arrondissement:</strong> {Equipement.new_name}
+        <strong>ARRONDISSEMENT:</strong> {Equipement.new_name}
       </p>
       <p>
-        <strong>Création:</strong> {Equipement.equip_service_date}
+        <strong>CREATION:</strong> {Equipement.equip_service_date}
       </p>
       <p>
-        <strong>Site internet:</strong> {Equipement.equip_url}
+        <strong>SITE INTERNET:</strong> {Equipement.equip_url}
       </p>
       <p>
-        <strong>Structure:</strong> {Equipement.equip_type_name}
+        <strong>STRUCTURE:</strong> {Equipement.equip_type_name}
       </p>
       <p>
-        <strong>Nature: </strong>
+        <strong>NATURE: </strong>
         {Equipement.equip_nature}
       </p>
       <p>
-        <strong>Accessibilité:</strong>{" "}
+        <strong>ACCESSIBILITE:</strong>{" "}
         {Equipement.inst_acc_handi_bool ? "Oui" : "Non"}
       </p>
-      <button onClick={handleDelete} className="button-details delete">
-        Supprimer
-      </button>
-      <Link
-        to={`/edit-equipement/${EquipementId}`}
-        className="button-details edit"
-      >
-        Editer
-      </Link>
+      <div className="container-butn">
+        <button onClick={handleDelete} className="button-details delete">
+          Supprimer
+        </button>
+        <Link
+          to={`/edit-equipement/${EquipementId}`}
+          className="button-details edit"
+        >
+          Editer
+        </Link>
+      </div>
     </div>
   );
 }
