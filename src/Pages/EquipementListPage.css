@@ -53,9 +53,11 @@
 
 
 .card-title {
-  color: #333;
+  color: var(--background-violet);
+  font-weight: 700;
   font-size: 18px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .card-text {
@@ -103,16 +105,19 @@
 
 .page-link-pagination {
   background-color: var(--background-violet);
-  text-decoration: none;
-  font-size: 16px;
   color: white;
   border: 1px solid var(--background-violet);
-  padding: 1rem;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  
 }
 
 .page-link-pagination:hover {
   color: white;
+}
+
+.handicap-icon {
+  color: red;
+  font-size: 1.5rem;
 }
 
 

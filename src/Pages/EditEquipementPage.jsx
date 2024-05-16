@@ -17,8 +17,10 @@ function EditEquipementPage() {
         const response = await axios.get(
           `${API_BASE_URL}/equipments/${EquipementId}`
         );
+
         setEquipement(response.data);
       } catch (err) {
+        navigate("/equipements");
         console.log(err.message);
       }
     }
@@ -27,11 +29,8 @@ function EditEquipementPage() {
 
   async function handleSubmit(formData) {
     try {
- 
-
       await axios.put(`${API_BASE_URL}/equipments/${EquipementId}`, formData);
-      navigate(`/equipements`);
-
+      navigate(`/Equipement-details/${EquipementId}`);
     } catch (error) {
       setErrorMsg(error.message);
     }

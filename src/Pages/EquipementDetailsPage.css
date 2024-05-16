@@ -10,16 +10,19 @@
   }
   
   .EquipementDetailsPage h2 {
-    color: #333;
+    color: var(--background-violet);
+    font-weight: 700;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 4rem;
   }
   
   .EquipementDetailsPage p {
     color: #666;
     font-size: 16px;
     margin-bottom: 10px;
+    text-align: center;
   }
   
   .button-details {
@@ -33,6 +36,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: bold;
+
   }
 
   .delete {
@@ -48,5 +52,11 @@
   
   a {
     display: inline-block;
+  }
+
+  .container-butn {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
   }
   
