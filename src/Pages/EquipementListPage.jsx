@@ -2,31 +2,49 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./EquipementListPage.css";
+import { API_BASE_URL } from "../consts";
 
 function EquipementListPage() {
   const [Equipements, setEquipements] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const equipementsPerPage = 5;
+  const [nbrOfPages, setnbrOfPages] = useState(1);
+
+  const equipementsPerPage = 12;
 
   useEffect(() => {
-    axios
-      .get(
-        `http://localhost:5000/equipments?_page=${currentPage}&per_page=${equipementsPerPage}`
-      )
-      .then((response) => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(
+          `${API_BASE_URL}/equipments?_page=${currentPage}&_limit=${equipementsPerPage}`
+        );
         setEquipements(response.data);
         console.log(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.log(error);
-      });
+      }
+    }
+
+    fetchData();
   }, [currentPage]);
 
-  function paginate(pageNumber) {
-    setCurrentPage(pageNumber);
-  }
+  useEffect(() => {
+    async function fetchPageCount() {
+      try {
+        const response = await axios.head(`${API_BASE_URL}/equipments?_page=1`);
+
+        const totalCount = parseInt(response.headers["x-total-count"]);
+        const pageCount = Math.ceil(totalCount / equipementsPerPage);
+
+        setnbrOfPages(pageCount);
+      } catch (error) {
+        console.error("error :", error);
+      }
+    }
+
+    fetchPageCount();
+  }, []);
 
   return (
     <div id="equipements">
@@ -69,8 +87,24 @@ function EquipementListPage() {
               </li>
             ))}*/}
 
-          <button onClick={() => setCurrentPage((page) => page + 1)}>
-            next page
+          <button onClick={() => setCurrentPage((currentPage) => 1)}>1</button>
+
+          <button
+            onClick={() => setCurrentPage((currentPage) => currentPage - 1)}
+          >
+            previous Page
+          </button>
+
+          <span>{currentPage}</span>
+
+          <button
+            onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
+          >
+            next Page
+          </button>
+
+          <button onClick={() => setCurrentPage((currentPage) => nbrOfPages)}>
+            {nbrOfPages}
           </button>
         </ul>
       </div>
