@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  console.log(isHome);
   return (
     <>
       <nav className="navbar bg-body-tertiary">
@@ -14,14 +17,18 @@ function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                {isHome ? (
                   <a href="#a-propos">A propos</a>
-                </Link>
+                ) : (
+                  <Link to="/#a-propos">A propos</Link>
+                )}
               </li>
               <li>
-                <Link to="/">
+                {isHome ? (
                   <a href="#etapes">Les étapes</a>
-                </Link>
+                ) : (
+                  <Link to="/#etapes">Les etapes</Link>
+                )}
               </li>
               <li>
                 <Link to="/equipements">Les Equipements</Link>

@@ -22,7 +22,7 @@ function EquipementDetailsPage() {
   async function handleDelete() {
     try {
       await axios.delete(`http://localhost:5000/equipments/${EquipementId}`);
-      navigate("/");
+      navigate("/equipements");
     } catch (error) {
       console.log(error.message);
     }
