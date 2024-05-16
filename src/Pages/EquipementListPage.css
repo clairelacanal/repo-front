@@ -9,7 +9,7 @@
   padding: 10px 20px;
   margin: 10px 0;
   background-color: var(--background-green);
-  color: var(--background-blue2);
+  color: var(--background-violet);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -18,7 +18,9 @@
 }
 
 .button-add:hover {
-  text-decoration: var(--background-green);
+  background-color: var(--background-green);
+  text-decoration: none;
+  color: var(--background-violet);
 }
 
 
@@ -87,14 +89,15 @@
 }
 
 .btn-primary {
-  background-color: var(--background-violet);
-  border: 1px solid var(--background-violet);
+  background-color: var(--background-mauvefonce);
+  border: 1px solid var(--background-mauvefonce);
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .btn-primary:hover {
-  background-color: var(--background-green);
-  border: 1px solid var(--background-green);
+  background-color: var(--background-mauvefonce);
+  border: 1px solid var(--background-mauvefonce);
   text-transform: uppercase;
 }
 
