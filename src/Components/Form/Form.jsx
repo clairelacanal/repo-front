@@ -58,13 +58,13 @@ function Form({ handleSubmit, data }) {
         ></textarea>
       </div>
       <div className="form-field">
-        <label htmlFor="inst_obs">Arrondissement:</label>
+        <label htmlFor="inst_cp">Code postal:</label>
         <textarea
-          name="inst_obs"
-          id="inst_obs"
+          name="inst_cp"
+          id="inst_cp"
           cols="30"
           rows="1"
-          value={formData.inst_obs}
+          value={formData.inst_cp}
           onChange={handleChange}
         ></textarea>
       </div>
