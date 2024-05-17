@@ -17,7 +17,7 @@ function EquipementListPage() {
 
   const [nbrOfPages, setnbrOfPages] = useState(1);
 
-  const equipementsPerPage = 12;
+  const equipementsPerPage = 8;
 
   const [search] = useSearchParams();
   let searchQuerry = "";
@@ -68,86 +68,90 @@ function EquipementListPage() {
 
   return (
     <div id="equipements">
-      <Link to="/new-Equipement" className="button-add">
-        + Nouvel équipement
-      </Link>
-      <div className="EquipementListPage">
-        {Equipements.map((Equipement) => (
-          <div
-            key={Equipement.id}
-            className="Equipement-item card"
-            style={{ width: "18rem" }}
-          >
-            <div className="card-body">
-              <h5 className="card-title">
-                {Equipement.inst_nom}{" "}
-                <span className="handicap-icon">
-                  <RenderIcon
-                    isHandicapped={Equipement.inst_acc_handi_bool === "true"}
-                  />
-                </span>
-              </h5>
-              <p>{Equipement.equip_type_name}</p>
-              <p className="card-text">
-                {Equipement.inst_adresse} - {Equipement.inst_cp}
-              </p>
-              <Link
-                className="btn btn-primary"
-                to={`/Equipement-details/${Equipement.id}`}
-              >
-                En savoir +
-              </Link>
+      <div className="container-one">
+        <Link to="/new-Equipement" className="button-add">
+          + Nouvel équipement
+        </Link>
+        <div className="EquipementListPage">
+          {Equipements.map((Equipement) => (
+            <div
+              key={Equipement.id}
+              className="Equipement-item card"
+              style={{ width: "18rem" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">
+                  {Equipement.inst_nom}{" "}
+                  <span className="handicap-icon">
+                    <RenderIcon
+                      isHandicapped={Equipement.inst_acc_handi_bool === "true"}
+                    />
+                  </span>
+                </h5>
+                <p>{Equipement.equip_type_name}</p>
+                <p className="card-text">
+                  {Equipement.inst_adresse} - {Equipement.inst_cp}
+                </p>
+                <Link
+                  className="btn btn-primary"
+                  to={`/Equipement-details/${Equipement.id}`}
+                >
+                  En savoir +
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
-        <ul className="pagination">
-          <li className="page-item">
-            <button
-              className="page-link"
-              onClick={() => setCurrentPage(1)}
-              disabled={currentPage === 1}
-              aria-label="Aller à la première page"
-            >
-              1
-            </button>
-          </li>
-          <li className="page-item">
-            <button
-              className="page-link"
-              onClick={() => setCurrentPage(currentPage - 1)}
-              disabled={currentPage === 1}
-              aria-label="Page précédente"
-            >
-              &laquo;
-            </button>
-          </li>
+          ))}
+        </div>
+        <div className="container-two">
+          <ul className="pagination">
+            <li className="page-item">
+              <button
+                className="page-link"
+                onClick={() => setCurrentPage(1)}
+                disabled={currentPage === 1}
+                aria-label="Aller à la première page"
+              >
+                1
+              </button>
+            </li>
+            <li className="page-item">
+              <button
+                className="page-link"
+                onClick={() => setCurrentPage(currentPage - 1)}
+                disabled={currentPage === 1}
+                aria-label="Page précédente"
+              >
+                &laquo;
+              </button>
+            </li>
 
-          <li className="page-item active">
-            <span className="page-link-pagination">{currentPage}</span>
-          </li>
+            <li className="page-item active">
+              <span className="page-link-pagination">{currentPage}</span>
+            </li>
 
-          <li className="page-item">
-            <button
-              className="page-link"
-              onClick={() => setCurrentPage(currentPage + 1)}
-              disabled={currentPage === nbrOfPages}
-              aria-label="Page suivante"
-            >
-              &raquo;
-            </button>
-          </li>
+            <li className="page-item">
+              <button
+                className="page-link"
+                onClick={() => setCurrentPage(currentPage + 1)}
+                disabled={currentPage === nbrOfPages}
+                aria-label="Page suivante"
+              >
+                &raquo;
+              </button>
+            </li>
 
-          <li className="page-item">
-            <button
-              className="page-link"
-              onClick={() => setCurrentPage(nbrOfPages)}
-              disabled={currentPage === nbrOfPages}
-              aria-label="Aller à la dernière page"
-            >
-              {nbrOfPages}
-            </button>
-          </li>
-        </ul>
+            <li className="page-item">
+              <button
+                className="page-link"
+                onClick={() => setCurrentPage(nbrOfPages)}
+                disabled={currentPage === nbrOfPages}
+                aria-label="Aller à la dernière page"
+              >
+                {nbrOfPages}
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

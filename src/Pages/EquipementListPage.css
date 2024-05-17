@@ -2,6 +2,8 @@
   padding: 20px;
   background: #f4f4f4;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-add {
@@ -29,7 +31,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .Equipement-item {
@@ -101,6 +103,10 @@
   background-color: var(--background-mauvefonce);
   border: 1px solid var(--background-mauvefonce);
   text-transform: uppercase;
+}
+
+.pagination {
+  margin-top: 1rem;
 }
 
 .page-link-pagination {

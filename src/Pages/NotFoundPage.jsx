@@ -1,10 +1,12 @@
 import "./NotFoundPage.css";
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+import logoNotFound from "../assets/images/not_found.jpg";
 
 function NotFoundPage() {
-  console.log("hello!!");
-  return <>{/* <img src={image} alt="image-404" />*/}</>;
+  return (
+    <div className="not-found">
+      <img src={logoNotFound} alt="logo not found" />
+    </div>
+  );
 }
 
 export default NotFoundPage;
